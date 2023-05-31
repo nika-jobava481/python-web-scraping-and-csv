@@ -1,5 +1,7 @@
 import csv,requests
 from bs4 import BeautifulSoup
+from time import sleep
+from random import randint
 pagenum=1
 url=f"https://quotes.toscrape.com/page/{pagenum}/"
 
@@ -21,3 +23,4 @@ with open("quotes.csv","w", newline="\n") as file:
             csv_file.writerow(row)
         
         pagenum+=1
+        sleep(randint(15,20))
